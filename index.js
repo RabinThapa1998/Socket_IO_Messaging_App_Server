@@ -13,7 +13,7 @@ const DB = process.env.DATABASE;
 
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["http://localhost:3000", "https://chatteam.netlify.app/"],
   })
 );
 
