@@ -10,12 +10,10 @@ const bcrypt = require("bcrypt");
 const User = require("./model/user");
 require("dotenv").config();
 const DB = process.env.DATABASE;
-const config = require("./config");
 
-console.log(config);
 app.use(
   cors({
-    origin: [config.CLIENT],
+    origin: ["http://localhost:3000", "https://chatteam.netlify.app/"],
   })
 );
 
@@ -24,7 +22,7 @@ app.use(express.json());
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: [config.CLIENT],
+    origin: "http://localhost:3000",
     methods: ["GET", "POST"],
   },
 });
